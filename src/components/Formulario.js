@@ -1,25 +1,32 @@
 import React, {Component} from 'react';
 
-class Formulario extends Component{
+class Formulario extends Component {
 
     //ref son para leer los valores de los campos de un formulario
-    constructor(props){
+    constructor(props) {
         super(props);
         this.marcaRef = React.createRef();
-        this.yearaRef = React.createRef();
+        this.yearRef = React.createRef();
         this.planBasicoRef = React.createRef();
         this.planCompletoRef = React.createRef();
     }
 
-    cotizarSeguro = e =>{
+    cotizarSeguro = e => {
         e.preventDefault();
-        //Obtener datos
-        console.log(this.marcaRef.current.value)
+        //Leer plan y designar con operador ternario
+        const plan = this.planBasicoRef.current.checked ? 'Basico' : 'Completo';
 
         //crear el objeto
-
+        const infoAuto = {
+            marca: this.marcaRef.current.value,
+            year: this.yearRef.current.value,
+            plan: plan
+        };
         //enviar al componente principal
+        this.props.cotizarSeguro(infoAuto);
 
+        //Resetear formulario
+        e.currentTarget.reset();
     };
 
     render() {
@@ -37,7 +44,7 @@ class Formulario extends Component{
 
                     <div className="campo">
                         <label>Año</label>
-                        <select name="year" ref={this.yearaRef}>
+                        <select name="year" ref={this.yearRef}>
                             <option value="2018">2018</option>
                             <option value="2017">2017</option>
                             <option value="2016">2016</option>
