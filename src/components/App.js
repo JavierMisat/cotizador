@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Header from "./Header";
 import Formulario from "./Formulario";
 import {calcularMarca, obtenerDiferenciaAnio, obtenerPlan} from "../helper";
+import Resumen from "./Resumen";
+import Resultado from "./Resultado";
 
 
 class App extends Component {
@@ -14,7 +16,7 @@ class App extends Component {
         };
     }
 
-    corizarSeguro = (datos) => {
+    cotizarSeguro = datos => {
         const {marca, plan, year} = datos;
 
         //Agregar una base de 2000 pedido por la empresa
@@ -55,7 +57,12 @@ class App extends Component {
                     titulo='Cotizador de Seguro de Auto'/>
                 <div className="contenedor-formulario">
                     <Formulario
-                        cotizarSeguro={this.corizarSeguro}/>
+                        cotizarSeguro={this.cotizarSeguro}/>
+                    <Resumen
+                        datos={this.state.datos}
+                        resultado={this.state.resultado}/>
+                    <Resultado
+                        resultado={this.state.resultado}/>
                 </div>
             </div>
         );
