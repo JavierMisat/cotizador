@@ -1,0 +1,13 @@
+{
+  "main.css": "/cotizador/static/css/main.cf6d2a0a.chunk.css",
+  "main.js": "/cotizador/static/js/main.78f4fbc0.chunk.js",
+  "main.js.map": "/cotizador/static/js/main.78f4fbc0.chunk.js.map",
+  "static/js/1.c1554583.chunk.js": "/cotizador/static/js/1.c1554583.chunk.js",
+  "static/js/1.c1554583.chunk.js.map": "/cotizador/static/js/1.c1554583.chunk.js.map",
+  "runtime~main.js": "/cotizador/static/js/runtime~main.e7f96ab5.js",
+  "runtime~main.js.map": "/cotizador/static/js/runtime~main.e7f96ab5.js.map",
+  "static/css/main.cf6d2a0a.chunk.css.map": "/cotizador/static/css/main.cf6d2a0a.chunk.css.map",
+  "index.html": "/cotizador/index.html",
+  "precache-manifest.2f968c5adf68d3d3c92d1213d03c4b12.js": "/cotizador/precache-manifest.2f968c5adf68d3d3c92d1213d03c4b12.js",
+  "service-worker.js": "/cotizador/service-worker.js"
+}
