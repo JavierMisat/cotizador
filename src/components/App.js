@@ -6,6 +6,14 @@ import {calcularMarca, obtenerDiferenciaAnio, obtenerPlan} from "../helper";
 
 class App extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            resultado: '',
+            datos: {}
+        };
+    }
+
     corizarSeguro = (datos) => {
         const {marca, plan, year} = datos;
 
@@ -25,7 +33,19 @@ class App extends Component {
         let incrementoPlan = obtenerPlan(plan);
 
         //Dependiendo del plan incrementa
-        resultado =  parseFloat(incrementoPlan * resultado).toFixed(2);
+        resultado = parseFloat(incrementoPlan * resultado).toFixed(2);
+
+        //Ya tenemos el costo definimos y seteamos el state
+        const datosAuto = {
+            marca: marca,
+            plan: plan,
+            year: year
+        };
+
+        this.setState({
+            resultado: resultado,
+            datos: datosAuto
+        })
     };
 
     render() {
